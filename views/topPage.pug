@@ -2,10 +2,31 @@ doctype html
 html(lang="ja")
   head
     meta(charset="UTF-8")
-    title NNチャットの入口
-  body
-    h1 NNチャットの入口
-    p
-      a(href="/posts") NNチャット
-    p
-      a(href="/logout") ログアウト 
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      integrity="sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo="
+      crossorigin="anonymous")
+    link(rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="/style.css")
+    title おだいばこチャットの入口
+  body.is-ready.d-flex.align-items-center.justify-content-center.min-vh-100.p-3
+    div.card.p-4.p-sm-5.text-center(style="max-width: 440px; width: 100%;")
+      div.mb-3
+        span.badge.rounded-pill.topic-badge(data-topic-tone="0")
+          i.bi-cup-hot-fill.me-1
+          | おだいばこチャット
+      h1.h3.mb-2 おだいばこチャットの入口
+      p.text-muted.small.mb-4 ほっとひと息つきながら、今日のお題や雑談をのんびり楽しもう。
+      div.d-grid.gap-2.mb-3
+        a.btn.btn-primary.py-2(href="/posts")
+          i.bi-chat-heart-fill.me-1
+          | チャットへ進む
+      div.mt-2
+        a.link-secondary.small.text-decoration-none(href="/logout")
+          i.bi-box-arrow-right.me-1
+          | ログアウト

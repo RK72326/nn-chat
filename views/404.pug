@@ -2,26 +2,41 @@ doctype html
 html(lang="ja")
   head
     meta(charset="UTF-8")
-    title 404
-  body
-    p
-      a(href="/posts") NNチャット 
-    img(src="https://nicovideo.cdn.nimg.jp/thumbnails/46536862/46536862.22604388.M") 
-
-    p やあ （´・ω・｀) 
-     
-    p ようこそ、バーボンハウスへ。
-    
-    p このテキーラはサービスだから、まず飲んで落ち着いて欲しい。
-    
-    p うん、「また」なんだ。済まない。
-    
-    p 仏の顔もって言うしね、謝って許してもらおうとも思っていない。
-    
-    p でも、この項目を見たとき、君は、きっと言葉では言い表せない「ときめき」みたいなものを感じてくれたと思う。
-    
-    p 殺伐とした世の中で、そういう気持ちを忘れないで欲しい
-    
-    p そう思って、この項目を作ったんだ。
-    
-    p じゃあ、注文を聞こうか。
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      integrity="sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo="
+      crossorigin="anonymous")
+    link(rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="/style.css")
+    title 404 | 迷子になっちゃった？
+  body.is-ready.d-flex.align-items-center.justify-content-center.min-vh-100.p-3
+    div.card.p-4.p-sm-5(style="max-width: 520px; width: 100%;")
+      div.text-center.mb-3
+        span.badge.rounded-pill.topic-badge(data-topic-tone="1")
+          i.bi-emoji-dizzy.me-1
+          | 404 Not Found
+        h1.h4.mt-2.mb-0 ちょっと道に迷ったみたい
+      div.text-center.my-3
+        img.rounded-4.img-fluid.shadow-sm(
+          src="https://nicovideo.cdn.nimg.jp/thumbnails/46536862/46536862.22604388.M"
+          alt="サムネイル"
+          style="max-height: 180px; object-fit: cover;")
+      div.small.lh-lg.mb-4
+        p.mb-2 やあ （´・ω・｀）
+        p.mb-2 ようこそ、バーボンハウスへ。
+        p.mb-2 このテキーラはサービスだから、まず飲んで落ち着いて欲しい。
+        p.mb-2 うん、「また」なんだ。済まない。
+        p.mb-2 仏の顔もって言うしね、謝って許してもらおうとも思っていない。
+        p.mb-2 でも、この項目を見たとき、君は、きっと言葉では言い表せない「ときめき」みたいなものを感じてくれたと思う。
+        p.mb-2 殺伐とした世の中で、そういう気持ちを忘れないで欲しい
+        p.mb-2 そう思って、この項目を作ったんだ。
+        p.mb-0 じゃあ、注文を聞こうか。
+      div.d-grid
+        a.btn.btn-primary.py-2(href="/posts")
+          i.bi-arrow-left-circle-fill.me-1
+          | おだいばこチャットに戻る

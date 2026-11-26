@@ -1,11 +1,246 @@
-body.container {
-  padding-top: 70px;
-  padding-bottom: 200px;
-}
-root{
+:root {
   scroll-behavior: auto;
+  --cafe-bg: #fdf8f2;
+  --cafe-surface: #fffdf9;
+  --cafe-accent: #e8998d;
+  --cafe-accent-soft: #fde8e4;
+  --cafe-mint-soft: #e6f4ee;
+  --cafe-border: #edd9c8;
+  --cafe-text: #4a3f38;
+  --cafe-shadow: 0 8px 20px rgba(133, 98, 74, 0.08);
 }
+
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  font-family: "Kiwi Maru", "Hiragino Maru Gothic ProN", sans-serif;
+  background-color: var(--cafe-bg);
+  color: var(--cafe-text);
+}
+
+body.is-ready {
+  opacity: 1;
+}
+
+body.container {
+  padding-top: 76px;
+  padding-bottom: 280px;
+}
+
+/* ナビゲーションバーをやわらかいコーラル・ラテ風に */
+.navbar.bg-primary {
+  background: linear-gradient(90deg, #f3a698 0%, #eab69f 100%) !important;
+  box-shadow: 0 4px 14px rgba(133, 98, 74, 0.12);
+}
+
+.navbar-brand {
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* カード全般を大きめの角丸＆ふんわり影に */
+.card {
+  background-color: var(--cafe-surface);
+  border: 1px solid var(--cafe-border) !important;
+  border-radius: 1.25rem;
+  box-shadow: var(--cafe-shadow);
+}
+
+.card.border-info {
+  background-color: var(--cafe-mint-soft);
+  border-color: #cde6dc !important;
+}
+
+.card.border-primary {
+  background-color: var(--cafe-accent-soft);
+  border-color: #f4b8ad !important;
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: 1px dashed var(--cafe-border);
+}
+
 p.card-text {
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+/* フォームやボタンも丸みを持たせる */
+.form-control,
+.form-select {
+  border-radius: 0.9rem;
+  border-color: var(--cafe-border);
+  background-color: #ffffff;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cafe-accent);
+  box-shadow: 0 0 0 0.2rem rgba(232, 153, 141, 0.22);
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+.btn-primary {
+  background-color: #e28d7e;
+  border-color: #e28d7e;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #d47969;
+  border-color: #d47969;
+}
+
+/* 下部固定エリアもカフェのトレイみたいにやさしく */
+.fixed-bottom.bg-body {
+  background-color: rgba(253, 248, 242, 0.95) !important;
+  border-top: 1px solid var(--cafe-border) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* ダークモード時の調整 */
+body[data-bs-theme="dark"] {
+  --cafe-bg: #231e1c;
+  --cafe-surface: #2e2724;
+  --cafe-accent-soft: #43322e;
+  --cafe-mint-soft: #283833;
+  --cafe-border: #473c37;
+  --cafe-text: #f5ede6;
+  --cafe-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+}
+
+body[data-bs-theme="dark"] .form-control,
+body[data-bs-theme="dark"] .form-select {
+  background-color: #26201d;
+  color: var(--cafe-text);
+}
+
+body[data-bs-theme="dark"] .fixed-bottom.bg-body {
+  background-color: rgba(35, 30, 28, 0.94) !important;
+}
+
+.topic-badge {
+  font-weight: 500;
+  padding: 0.35em 0.75em;
+  border: 1px solid transparent;
+}
+
+/* 0: 雑談（あたたかいミルクキャラメル） */
+.topic-badge[data-topic-tone="0"] {
+  background-color: #f9ead7 !important;
+  color: #6b4c2a !important;
+  border-color: #ecd1b0 !important;
+}
+
+/* 1: ピーチピンク */
+.topic-badge[data-topic-tone="1"] {
+  background-color: #fde4e8 !important;
+  color: #7c3545 !important;
+  border-color: #f7c5ce !important;
+}
+
+/* 2: パステルミント */
+.topic-badge[data-topic-tone="2"] {
+  background-color: #dff5ec !important;
+  color: #245c47 !important;
+  border-color: #bce6d5 !important;
+}
+
+/* 3: やさしいレモン */
+.topic-badge[data-topic-tone="3"] {
+  background-color: #fff5cc !important;
+  color: #6d5816 !important;
+  border-color: #f5e39c !important;
+}
+
+/* 4: ラベンダー */
+.topic-badge[data-topic-tone="4"] {
+  background-color: #ece5ff !important;
+  color: #48357a !important;
+  border-color: #d4c8fa !important;
+}
+
+/* 5: ベビーソーダ */
+.topic-badge[data-topic-tone="5"] {
+  background-color: #dff1ff !important;
+  color: #255276 !important;
+  border-color: #bddffb !important;
+}
+
+/* ダークモード時のお題バッジ */
+body[data-bs-theme="dark"] .topic-badge[data-topic-tone="0"] {
+  background-color: #4a3928 !important;
+  color: #f7dfc4 !important;
+  border-color: #695139 !important;
+}
+
+body[data-bs-theme="dark"] .topic-badge[data-topic-tone="1"] {
+  background-color: #4d2c35 !important;
+  color: #ffd6e0 !important;
+  border-color: #6e404d !important;
+}
+
+body[data-bs-theme="dark"] .topic-badge[data-topic-tone="2"] {
+  background-color: #25473b !important;
+  color: #cbf7e6 !important;
+  border-color: #386655 !important;
+}
+
+body[data-bs-theme="dark"] .topic-badge[data-topic-tone="3"] {
+  background-color: #4b401d !important;
+  color: #fff0b8 !important;
+  border-color: #6b5b2a !important;
+}
+
+body[data-bs-theme="dark"] .topic-badge[data-topic-tone="4"] {
+  background-color: #382c59 !important;
+  color: #e4dcff !important;
+  border-color: #51417d !important;
+}
+
+body[data-bs-theme="dark"] .topic-badge[data-topic-tone="5"] {
+  background-color: #253f54 !important;
+  color: #d1ecff !important;
+  border-color: #375b78 !important;
+}
+
+.today-topic-badge {
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.45em 0.9em;
+}
+
+#floating-scroll-btns {
+  position: fixed;
+  right: 1rem;
+  bottom: 195px;
+  z-index: 1035;
+}
+
+.floating-scroll-btn {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px !important;
+  background-color: var(--cafe-surface);
+  border-color: var(--cafe-border);
+  color: var(--cafe-text);
+  box-shadow: 0 6px 16px rgba(133, 98, 74, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-scroll-btn:hover,
+.floating-scroll-btn:focus {
+  background-color: var(--cafe-accent-soft);
+  border-color: var(--cafe-accent);
+  color: var(--cafe-text);
+}
+
+body[data-bs-theme="dark"] .floating-scroll-btn {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
